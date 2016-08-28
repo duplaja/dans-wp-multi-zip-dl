@@ -8,22 +8,6 @@
 * Author URI: https://www.convexcode.com
 **/
 
-//enqueues all css files needed
-function wpmultizipdl_enqueue_style() {
-
-	//wp_enqueue_style( 'some-name', plugin_dir_url( __FILE__ ) . 'css/somefile.css', false ); 
-}
-//enqueues all js files needed
-function wpmultizipdl_enqueue_script() {
-
-	//wp_enqueue_script( 'some-name-js', plugin_dir_url( __FILE__ ) . 'js/somejsfile.min.js', false ); 
-
-	
-}
-
-add_action( 'wp_enqueue_scripts', 'wpmultizipdl_enqueue_style' );
-add_action( 'wp_enqueue_scripts', 'wpmultizipdl_enqueue_script' );
-
 
 //creates an entry on the admin menu for dan-gcal-plugin
 add_action('admin_menu', 'wpmultizipdl_plugin_menu');
@@ -252,5 +236,3 @@ function wpmultizipdl_shortcode_output( $atts ){
 }
 
 add_shortcode('dans-multizip', 'wpmultizipdl_shortcode_output');
-
-
