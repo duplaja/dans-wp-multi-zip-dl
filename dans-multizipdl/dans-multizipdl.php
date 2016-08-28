@@ -199,9 +199,10 @@ function wpmultizipdl_shortcode_output( $atts ){
 	    foreach(glob($directory.'/*') as $file) { 
 
 	  	   $fileshort = str_replace($directory.'/','',$file);
+		   $filepart = $dir.'/'.$fileshort;
 	        echo '<tr><td>
 
-			<input name="filename[]" type="checkbox" value="'.$fileshort.'">
+			<input name="filename[]" type="checkbox" value="'.$filepart.'">
 	
 			</td><td>'.$fileshort."</td></tr>";
 

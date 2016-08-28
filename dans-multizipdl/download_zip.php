@@ -1,5 +1,8 @@
 <?php
 
+require_once('../../../wp-blog-header.php');
+
+
 if(isset($_POST['filename'])){
   if (is_array($_POST['filename'])) {
 
@@ -12,8 +15,11 @@ if(isset($_POST['filename'])){
     # loop through each file
     foreach($_POST['filename'] as $fileshort){
 
-        $dir_array=wp_upload_dir 
-        # download file
+		$directory_array= wp_upload_dir();
+
+		$file = $directory_array['basedir'].'/zips/'.$fileshort;        # download file
+
+		
         $download_file = file_get_contents($file);
 
         #add it to the zip
