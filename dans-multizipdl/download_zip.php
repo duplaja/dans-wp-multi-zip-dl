@@ -10,8 +10,9 @@ if(isset($_POST['filename'])){
     $zip->open($tmp_file, ZipArchive::CREATE);
 
     # loop through each file
-    foreach($_POST['filename'] as $file){
+    foreach($_POST['filename'] as $fileshort){
 
+        $dir_array=wp_upload_dir 
         # download file
         $download_file = file_get_contents($file);
 
