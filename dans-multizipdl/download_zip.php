@@ -33,8 +33,8 @@ if(isset($_POST['filename'])){
 	$date = date('m-d-y');
 
     # send the file to the browser as a download
+   header('Content-type: application/zip',true,200);
     header('Content-disposition: attachment; filename=Multidownload-'.$date.'.zip');
-    header('Content-type: application/zip');
     readfile($tmp_file);
 
 	unlink($tmp_file);
